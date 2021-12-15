@@ -5,7 +5,7 @@
 제 블로그는 [GitHub Pages](https://pages.github.com/)와 [Jekyll](https://jekyllrb.com/)을 사용하여 퍼블리싱하였습니다.  
 해당 문서는 Jekyll 기반의 블로그 운영을 위한 환경구성 방법과 설치방법들을 설명합니다.
 
-jack-koh blog: https://github.com/Jack-koh/Jack-koh.github.io.git  
+jack-koh blog: https://jack-koh.github.io/
 jekyll 공식사이트: https://jekyllrb-ko.github.io/
 
 
