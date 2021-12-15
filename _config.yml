@@ -1,86 +1,85 @@
-title: devlopr
-subtitle: A Portfolio Jekyll Theme Built for Developers
+title: Jack koh
+subtitle: 프론트엔드 개발자 Jack koh의 기술 블로그
 description: >- # this means to ignore newlines until "baseurl:"
   devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
+url: "https://jack-koh.github.io/" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
-    - text: Home
-      url: /
-    - text: About
-      url: /about
-    - text: Blog
-      url: /blog
-    - text: Gallery
-      url: /gallery
-    - text: Shop
-      url : /shop
-    - text: Contact
-      url : /contact
-
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  - text: Blog
+    url: /blog
+  - text: Gallery
+    url: /gallery
+  - text: Shop
+    url: /shop
+  - text: Contact
+    url: /contact
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
 author_logo: profile.png
-author: John Doe
-author_bio: Hi, my name is John Doe. I built this site using devlopr-jekyll :D
-author_email: "mail@sujaykundu.com"
-author_location: India
-author_website_url: "https://sujaykundu.com"
-typewrite-text: devlopr is a jekyll framework built for developers. You can edit this in _config.yml file
+author: Jack koh
+author_bio: 안녕하세요 프론트엔드 개발자 고현영입니다.
+author_email: "rhgusdud09@naver.com"
+author_location: Korea
+author_website_url: "https://github.com/Jack-koh"
+typewrite-text: Welcom to visit my world!
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
 author_work_experiences:
-            - company_name: Google
-              company_logo: google.png
-              company_url: https://google.com
-              designation: Software Engineer
-              description: Worked on various Google Products
-              visibility: true
-            - company_name: Microsoft
-              company_logo: microsoft.png
-              company_url: https://microsoft.com
-              designation: Azure Developer
-              description: Worked on various Azure Cloud Products
-              visibility: true
+  - company_name: 에스에스알
+    company_logo: ssr.png
+    company_url: http://www.ssrinc.co.kr/
+    designation: Frontend Developer
+    description: 보안솔루션 UI개발
+    visibility: true
+  - company_name: Funple Works
+    company_logo: funple.png
+    company_url: http://www.funplecorp.com/kr/ko/
+    designation: Graphic Designer
+    description: 웹페이지, 배너, 기타 그래픽 작업
+    visibility: true
 
 # Education
 author_education_details:
-              - college_logo: mit.png
-                college_name: MIT
-                college_url: https://mit.org
-                college_degree: CS Engineer
-                description: Bachelor of Technology
-                visibility: true
+  - college_logo: suncheon.png
+    college_name: 순천대학교
+    college_url: https://www.scnu.ac.kr/
+    college_degree: 학사 졸업
+    description: 영상 디자인
+    visibility: true
 
 # Projects
 author_project_details:
-              - project_thumbnail: gamershub.png
-                project_title: Gamers Hub
-                project_description: A Platform built for Gamers and Game Devs
-                project_url: https://gamershub.in
-                visibility: true
-              - project_thumbnail: hack4r.PNG
-                project_title: Hack4r
-                project_description: A Platform built for Hackers and Penetration Testers
-                project_url: https://hack4r.com
-                visibility: true
+  - project_thumbnail: gamershub.png
+    project_title: Gamers Hub
+    project_description: A Platform built for Gamers and Game Devs
+    project_url: https://gamershub.in
+    visibility: true
+  - project_thumbnail: hack4r.PNG
+    project_title: Hack4r
+    project_description: A Platform built for Hackers and Penetration Testers
+    project_url: https://hack4r.com
+    visibility: true
 
 # social links
-twitter_username: johndoe
-github_username:  sujaykundu777
-facebook_username: johndoe
-linkedin_username: johndoe
-behance_username: johndoe
-instagram_username: johndoe
-medium_username: johndoe
-telegram_username: johndoe
-dribbble_username: johndoe
-flickr_username: johndoe
+# twitter_username: johndoe
+github_username: jack-koh
+facebook_username: hyunyoung.ko.50
+# linkedin_username: johndoe
+# behance_username: johndoe
+instagram_username: hyeonyoungkoh
+# medium_username: johndoe
+# telegram_username: johndoe
+# dribbble_username: johndoe
+# flickr_username: johndoe
 
 #for comments ( we got Disqus and Hyvor Commenting, uncomment the one you want to use )
 
@@ -88,7 +87,7 @@ flickr_username: johndoe
 hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
-wakatime_username: sujaykundu777
+wakatime_username: Jack_Koh
 
 # mailchimp embedded form url (newsletter):
 mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
@@ -108,7 +107,7 @@ permalink: pretty
 
 # Choose what to show ( can be true or false)
 show_author_work_experiences: true
-show_author_education_details: true
+show_author_education_details: false
 show_author_project_details: true
 
 # pagination of posts
@@ -139,13 +138,11 @@ collections:
     output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "gallery"
     values:
       permalink: /:path/:basename:output_ext
-  -
-    scope:
+  - scope:
       path: ""
       type: authors
     values:
@@ -169,7 +166,6 @@ jekyll_admin:
   #   - datafiles
   #   - configuration
   homepage: "posts"
-
 
 # Exclude from processing.
 # The following items will not be processed, by default.
