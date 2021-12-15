@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Added Latex Support"
+title: 'Added Latex Support'
 summary: Writing Equations using Latex
 author: xplor4r
 date: '2020-10-24 10:35:23 +0530'
@@ -25,7 +25,7 @@ For Example :
 
 You should be able to see it in your post as: $$E=mc^2$$
 
- use `$$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$` to write :
+use `$$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$` to write :
 
 $$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$
 

@@ -1,10 +1,10 @@
 title: Jack koh
-subtitle: 프론트엔드 개발자 Jack koh의 기술 블로그
+subtitle: 기록되지 않은 것은 기억되지 않는다.
 description: >- # this means to ignore newlines until "baseurl:"
   devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
 
-url: "https://jack-koh.github.io/" # the base hostname & protocol for your site, e.g. https://example.github.io
-baseurl: "" # the subpath of your site, e.g. /blog
+url: 'https://jack-koh.github.io/' # the base hostname & protocol for your site, e.g. https://example.github.io
+baseurl: '' # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
@@ -26,9 +26,9 @@ urls:
 author_logo: profile.png
 author: Jack koh
 author_bio: 안녕하세요 프론트엔드 개발자 고현영입니다.
-author_email: "rhgusdud09@naver.com"
+author_email: 'rhgusdud09@naver.com'
 author_location: Korea
-author_website_url: "https://github.com/Jack-koh"
+author_website_url: 'https://github.com/Jack-koh'
 typewrite-text: Welcom to visit my world!
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
@@ -113,7 +113,7 @@ show_author_project_details: true
 # pagination of posts
 paginate: 4
 per_page: 4
-paginate_path: "/blog/page/:num/"
+paginate_path: '/blog/page/:num/'
 
 # minify
 # compress_html:
@@ -139,11 +139,11 @@ collections:
 
 defaults:
   - scope:
-      path: "gallery"
+      path: 'gallery'
     values:
       permalink: /:path/:basename:output_ext
   - scope:
-      path: ""
+      path: ''
       type: authors
     values:
       layout: author
@@ -165,7 +165,7 @@ jekyll_admin:
   #   - staticfiles
   #   - datafiles
   #   - configuration
-  homepage: "posts"
+  homepage: 'posts'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
