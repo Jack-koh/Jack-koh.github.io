@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Added Latex Support'
+title: "Added Latex Support"
 summary: Writing Equations using Latex
 author: xplor4r
-date: '2020-10-24 10:35:23 +0530'
+date: "2020-10-24 10:35:23 +0530"
 category: jekyll
 thumbnail: /assets/img/posts/code.jpg
 keywords: devlopr jekyll, how to use devlopr, devlopr, how to use devlopr-jekyll, devlopr-jekyll tutorial,best jekyll themes
