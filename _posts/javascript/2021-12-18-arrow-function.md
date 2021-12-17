@@ -3,7 +3,7 @@ layout: post
 title: "일반 함수와 화살표함수의 차이는 무엇일까?"
 summary: "ES6 Arrow function에 대해 알아보자"
 author: jack
-date: "2021-12-18 18:58:47 GMT+0900"
+date: "2021-12-17 13:58:47 GMT+0900"
 category: ["JavaScript"]
 tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
@@ -12,10 +12,55 @@ usemathjax: false
 permalink: /blog/arrow-function/
 ---
 
-## let 변수와 const 변수에 대해 알아보자.
+## Arrow Function
 
-우선 es6부터 새로 도입된 `let`과 `const`에 대해 이해하기 앞서 이전에 사용되던 `var`와 변수의 범위가 무엇인지 이해할 필요가 있다.  
-크게 var로 선언된 변수는 `local 변수`와 `global 변수`로 구분이 되는데 이렇게 구분이 되는 이유는 기능과 목적이 다르기 때문이다.
+화살표 함수의 가장 특징적인 부분은 문법적으로 기존의 함수보다 간결해졌다는 것이다. 이하의 설명에서 전통적으로 사용해오던 함수는 일반함수로 부르겠다. 우선 일반함수와 화살표 함수의 형태부터 확인해보자.
+
+```javascript
+// 일반함수
+const add = function (one, two) {
+  return one + two;
+};
+console.log(add(1, 2)); // 결과: 3
+const add = (one, two) => {
+  return one + two;
+};
+console.log(add(1, 2)); // 결과: 3
+```
+
+일반함수의 function 키워드를 이용해서 함수를 선언과는 다르게 화살표함수는 => 를 사용하여 함수를 선언한다.
+위의 문법만 봐서는 그렇게 큰차이를 느끼지는 못한다. 여기서 몇가지 더 살펴볼 화살표 함수의 특징이 있다.
+
+```javascript
+const add = (one, two) => one + two;
+console.log(add(1, 2)); // 결과: 3
+```
+
+화살표 함수는 한줄로 사용할때 함수블록과 return을 생략 가능하다.
+화살표함수에서 블록을 사용하면 return을 작성하지 않은것과 같다.
+이러한 현상은 화살표이기 때문이 아니라 블록을 해석하는 js 문법때문이다.
+
+```javascript
+const add = (one, two) => {
+  one + two;
+};
+console.log(add(1, 2)); // 결과: undefinde
+
+const add = (one, two) => {
+  return one + two;
+};
+console.log(add(1, 2)); // 결과: 3
+```
+
+그렇다면 { key: value } 과같은 오브젝트 리터럴을 형태를 반환하고싶다면 어떻게 해야할까?
+반환하고 싶은 오브젝트를 ({ key: value }) 형태로 소괄호로 감싸서 작성해주면된다.
+
+```javascript
+const add = (one, two) => ({ sum: one + two });
+console.log(add(1, 2)); // 결과: { sum: 3 }
+```
+
+지금까지 화살표 함수의 기본문법에 대해 살펴보았다.
 
 #### 1. Global 변수
 
