@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "var, let, const 의 차이점은 무엇일까?"
-summary: "ES6 let 과 const에 대한 이해"
+summary: "ES6 let 과 const에 대해 알아보자"
 author: jack
 date: "2021-12-16 11:58:47 GMT+0900"
 category: ["JavaScript"]
@@ -9,7 +9,7 @@ tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
 keywords: Jack, developer, es6, javascript, frontend, variables, 자바스크립트, 변수, let, const
 usemathjax: false
-permalink: /blog/es6-let-const/
+permalink: /blog/variables/
 ---
 
 ## let 변수와 const 변수에 대해 알아보자.
