@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "일반 함수와 화살표함수의 차이는 무엇일까?"
-summary: "ES6 Arrow function에 대해 알아보자"
+title: '일반 함수와 화살표함수의 차이는 무엇일까?'
+summary: 'ES6 Arrow function에 대해 알아보자'
 author: jack
-date: "2021-12-17 13:58:47 GMT+0900"
-category: ["JavaScript"]
+date: '2021-12-17 13:58:47 GMT+0900'
+category: ['JavaScript']
 tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
 keywords: Jack, developer, es6, javascript, frontend, arrow, function, 자바스크립트, 화살표, 함수
@@ -70,7 +70,7 @@ console.log(add(1, 2)); // 결과: { sum: 3 }
 기본적으로 브라우저에서 global은 `window 객체`를 지칭한다. 그렇기 때문에 global 변수로 사용되는 변수들은 window 객체의 프로퍼티로 등록되게 되어있다. global 변수를 생성하는 방법은 선언되지 않은 변수에 값을 할당하거나 global 범위에서 var 를 이용해서 변수를 선언하는방법이 있다. 아래의 예시를 통해 확인해보자.
 
 ```javascript
-var varGlobal = "varGlobal";
+var varGlobal = 'varGlobal';
 // 또는 varGlobal = 'varGlobal';
 ```
 
@@ -92,7 +92,7 @@ var varGlobal = "varGlobal";
 let 변수는 블록범위 내에서 작성해야하지만 전역위치에서는 블록이 없으므로 javascript 엔진이 블록은 만들고 이를 스코프로 사용하여 설정하는 개념이다. 아래의 예시를 보자.
 
 ```javascript
-let letGlobal = "letGlobal";
+let letGlobal = 'letGlobal';
 ```
 
 <blockquote class="dev-tool">
@@ -119,9 +119,9 @@ let letGlobal = "letGlobal";
 local 변수는 함수 내부에 선언된 변수들을 일컫는 말이다. local 블록 내부에 선언된 변수들은 외부에서 접근이 불가능한 특징이 있다. 아래의 예시를 보자.
 
 ```javascript
-var name = "Jack";
+var name = 'Jack';
 function localScope() {
-  var name = "koh";
+  var name = 'koh';
 }
 localScope();
 console.log(name);
@@ -164,12 +164,12 @@ Block Scope 내부에 변수가 저장되어야하는데 전역에 위치한 let
 
 ```javascript
 // var 를 사용했을때
-var name = "Jack";
+var name = 'Jack';
 if (name) {
-  var name = "Koh";
-  console.log("in :", name);
+  var name = 'Koh';
+  console.log('in :', name);
 }
-console.log("out :", name);
+console.log('out :', name);
 // 결과: in : Koh, out : Koh
 ```
 
@@ -191,12 +191,12 @@ var 변수는 블록범위를 가지지 않으므로 위의 코드에서 var nam
 
 ```javascript
 // let 을 사용했을때
-let name = "Jack";
+let name = 'Jack';
 if (name) {
-  let name = "Koh";
-  console.log("in :", name);
+  let name = 'Koh';
+  console.log('in :', name);
 }
-console.log("out :", name);
+console.log('out :', name);
 // 결과: in : Koh, out : Jack
 ```
 
@@ -236,7 +236,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 // 배열에 할당된 모든 함수 실행
 arr.forEach((el) => el());
-console.log("i :", i);
+console.log('i :', i);
 // 결과: 5, 5, 5, 5, 5
 //       i: 5
 ```
@@ -252,7 +252,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 // 배열에 할당된 모든 함수 실행
 arr.forEach((el) => el());
-console.log("i :", i);
+console.log('i :', i);
 // 결과: 0, 1, 2, 3, 4
 //       Uncaught ReferenceError: i is not defined
 ```
@@ -273,12 +273,12 @@ const 변수는 지금껏 설명했던 let의 특성을 모두 가지고 있다.
 속성들에 대해서는 변경이 가능하다.
 
 ```javascript
-const name = "Jack";
-name = "Jack"; // 변경 불가능
+const name = 'Jack';
+name = 'Jack'; // 변경 불가능
 
 const name = [1, 2, 3, 4, 5];
 name[0] = 2; // 변경 가능
 
-const name = { fistName: "Jack", lastName: "koh" };
-name.lastName = "kim"; // 변경 가능
+const name = { fistName: 'Jack', lastName: 'koh' };
+name.lastName = 'kim'; // 변경 가능
 ```

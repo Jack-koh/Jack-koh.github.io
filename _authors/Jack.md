@@ -1,17 +1,17 @@
 ---
 name: Jack koh
 username: jack-koh
-bio: "안녕하세요 프론트엔드 개발자 고현영입니다."
+bio: '안녕하세요 프론트엔드 개발자 고현영입니다.'
 site: https://github.com/Jack-koh
 avatar: jack.png
 email: rhgusdud09@naver.com
 social:
-  - title: "github"
-    url: "https://github.com/jack-koh"
-  - title: "facebook"
-    url: "https://www.facebook.com/hyunyoung.ko.50"
-  - title: "instagram"
-    url: "https://instagram.com/hyeonyoungkoh"
+  - title: 'github'
+    url: 'https://github.com/jack-koh'
+  - title: 'facebook'
+    url: 'https://www.facebook.com/hyunyoung.ko.50'
+  - title: 'instagram'
+    url: 'https://instagram.com/hyeonyoungkoh'
   # - title: 'linkedin'
   #   url: 'https://www.linkedin.com/in/johndoe'
   # - title: 'youtube'
