@@ -34,7 +34,7 @@ blockquote.dev-tool {
       align-items: center;
       margin-right: 4px;
       &::before {
-        content: "";
+        content: '';
         display: block;
         @include arrow-right;
       }
@@ -44,7 +44,7 @@ blockquote.dev-tool {
       display: flex;
       align-items: center;
       &::before {
-        content: "";
+        content: '';
         display: block;
         @include arrow-down;
       }
@@ -63,10 +63,10 @@ blockquote.dev-tool {
         font-size: 87.5%;
         padding-left: 10px;
         .key {
-          color: #9aa095;
+          color: #5db0d7;
           font-weight: 700;
           &::after {
-            content: ":";
+            content: ':';
             color: #fff;
             margin-left: 0.2rem;
           }
@@ -84,8 +84,9 @@ blockquote.dev-tool {
         .key {
           color: #5db0d7;
           font-weight: 700;
+
           &::after {
-            content: ":";
+            content: ':';
             color: #fff;
             margin-left: 0.2rem;
           }
@@ -110,5 +111,37 @@ blockquote.dev-tool {
       padding: 16px;
       background-color: #202124;
     }
+  }
+
+  .white {
+    color: #fff !important;
+  }
+
+  .purple {
+    color: #9980ff !important;
+  }
+
+  .gray {
+    color: #9aa095 !important;
+  }
+
+  .orange {
+    color: #f29766 !important;
+  }
+
+  .dark-sky {
+    color: #427187 !important;
+  }
+
+  .margin-l-10 {
+    margin-left: 10px;
+  }
+
+  .margin-t-10 {
+    margin-top: 10px;
+  }
+
+  .margin-b-10 {
+    margin-bottom: 10px;
   }
 }
