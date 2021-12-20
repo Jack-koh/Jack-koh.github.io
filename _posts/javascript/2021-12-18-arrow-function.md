@@ -1,10 +1,10 @@
 ---
 layout: post
-title: '일반 함수와 화살표함수의 차이는 무엇일까?'
-summary: 'ES6 Arrow function에 대해 알아보자'
-author: jack
-date: '2021-12-17 13:58:47 GMT+0900'
-category: ['JavaScript']
+title: "일반 함수와 화살표함수의 차이는 무엇일까?"
+summary: "ES6 Arrow function에 대해 알아보자"
+author: jack-koh
+date: "2021-12-17 13:58:47 GMT+0900"
+category: ["JavaScript"]
 tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
 keywords: Jack, developer, es6, javascript, frontend, arrow, function, 자바스크립트, 화살표, 함수
@@ -12,9 +12,11 @@ usemathjax: false
 permalink: /blog/arrow-function/
 ---
 
-## 화살표 함수와 일반함수의 차이는 무엇일까?
+# 화살표 함수와 일반함수의 차이는 무엇일까?
 
-#### 1.화살표 함수의 문법
+---
+
+#### 1.화살표 함수의 기본문법
 
 화살표 함수의 가장 특징적인 부분은 문법적으로 기존의 함수보다 간결해졌다는 것이다. 이하의 설명에서 전통적으로 사용해오던 함수는 일반함수로 부르겠다.
 우선 `일반함수`와 `화살표 함수`의 형태부터 확인해보자.
@@ -176,7 +178,7 @@ arrow(1, 2, 3);
 우선 일반함수가 `this`를 참조하는 방식을 살펴보자. 일반함수는 함수가 실행이 되었을때 자신을 실행시킨 오브젝트를 `this`로 참조한다. 아래의 코드를 살펴보자.
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const normal = function () {
   console.log(this.name);
 };
@@ -189,12 +191,12 @@ normal();
 이어서 아래의 코드를 살펴보자.
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const normal = function () {
   console.log(this.name);
 };
 const obj = {
-  name: 'Koh',
+  name: "Koh",
   normal: normal,
 };
 obj.normal();
@@ -212,7 +214,7 @@ obj.normal();
 설명도 어렵기때문에 이론적으로는 이해하기 어려울것이다. 아래의 코드를 보면서 이해해보자.
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const arrow = () => {
   console.log(this.name);
 };
@@ -222,9 +224,9 @@ arrow();
 ```
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const Obj = function () {
-  this.name = 'Koh';
+  this.name = "Koh";
 };
 Obj.prototype.getName = () => console.log(this.name);
 new Obj().getName();
@@ -233,9 +235,9 @@ new Obj().getName();
 ```
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const Obj = function () {
-  this.name = 'Koh';
+  this.name = "Koh";
 };
 Obj.prototype.getName = function () {
   const name = () => {
@@ -249,9 +251,9 @@ new Obj().getName();
 ```
 
 ```javascript
-var name = 'Jack';
+var name = "Jack";
 const Obj = function () {
-  this.name = 'Koh';
+  this.name = "Koh";
   this.getName = () => {
     console.log(this.name);
   };
@@ -263,5 +265,8 @@ new Obj().getName();
 
 위의 코드는 class문법으로 사용하지 않았지만 class내부에서도 같은 동작 원리를 가지고있다.
 
-위의 결과와 같이 화살표함수의 this는 어디에 선언이 되는지에따라 가르키는 this가 달라진다.
+위의 결과와 같이 화살표함수의 this는 어디에 선언이 되는지에따라 가르키는 this가 달라진다.  
+또한 위에서 설명했듯이 화살표 함수는 function 오브젝트가 생성될때 오브젝트가 스코프를 생성된 오브젝트에 바인딩을 한다.  
+이렇게 한번 바인딩 된 화살표 함수의 this 는 다시 bind함수를 사용하여 래핑을 한다고 해서 this가 변경되지 않는다.
+
 많이 헷갈릴수도 있는부분이기때문에 이러한 특성을 인지하고 스스로 여러 환경에서 연습을 하며 익혀야한다.
