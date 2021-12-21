@@ -9,7 +9,7 @@ tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
 keywords: Jack, developer, es6, javascript, frontend, variables, 자바스크립트, 변수, let, const
 usemathjax: false
-permalink: /blog/variables/
+permalink: /blog/2021-12-16-variables/
 ---
 
 # let 변수와 const 변수에 대해 알아보자.
@@ -102,7 +102,7 @@ console.log(name);
     <p class="title arrow-down">Global</p>
     <p class="property">
     <span class="key">name</span>
-    <span class="value">'Koh'</span>
+    <span class="value">'Jack'</span>
   </p>
   </div>
 </blockquote>

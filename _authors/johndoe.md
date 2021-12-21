@@ -1,4 +1,4 @@
----
+<!-- ---
 name: John Doe
 username: johndoe
 bio: "Hi I a John, a Web Developer and Designer."
@@ -28,4 +28,4 @@ social:
     url: "https://dribbble.com/johndoe"
   - title: "flickr"
     url: "https://flickr.com/johndoe"
----
+--- -->

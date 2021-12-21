@@ -9,7 +9,7 @@ tags: JavaScript
 thumbnail: /assets/img/posts/thumnail_js.png
 keywords: Jack, developer, es6, javascript, frontend, arrow, function, 자바스크립트, 화살표, 함수
 usemathjax: false
-permalink: /blog/arrow-function/
+permalink: /blog/2021-12-17-arrow-function/
 ---
 
 # 화살표 함수와 일반함수의 차이는 무엇일까?
