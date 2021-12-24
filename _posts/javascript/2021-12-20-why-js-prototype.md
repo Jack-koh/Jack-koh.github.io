@@ -40,7 +40,7 @@ permalink: /blog/2021-12-17-prototype/
 관념론 - 유물론
 ```
 
-<p class="center">
+<p class="image__center">
   <img src="/assets/img/posts/javascript/prototype/플라톤.jpg" alt="플라톤" />
 </p>
 
@@ -99,7 +99,7 @@ const 참새 = new 조류();
 이러한 비판은 19세기 후반 매우 유명한 철학자인 [루트비히 비트겐슈타인(Ludwig Wittgenstein)](https://ko.wikipedia.org/wiki/%EB%A3%A8%ED%8A%B8%EB%B9%84%ED%9E%88_%EB%B9%84%ED%8A%B8%EA%B2%90%EC%8A%88%ED%83%80%EC%9D%B8).
 에 의해 계속 되었습니다.
 
-<p class="center">
+<p class="image__center">
   <img src="/assets/img/posts/javascript/prototype/비트겐슈타인.jpg" alt="비트겐슈타인" />
 </p>
 
@@ -144,7 +144,7 @@ const 참새 = new 조류();
 인간은 사물을 분류할 때 자연스럽게 가장 유사성 높은 것 순서대로 등급을 매긴다는 의미로 볼 수 있습니다.
 이렇게 분류했을 때 가장 높은 등급을 가진 녀석이 나올 텐데요, 이것이 바로 원형(Prototype)이다. 란 주장이 프로토타입 이론입니다.
 
-<p class="center">
+<p class="image__center">
   <img src="/assets/img/posts/javascript/prototype/새.jpg" alt="새" />
 </p>
 
