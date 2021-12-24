@@ -187,8 +187,234 @@ const 참새 = new 조류();
 지금부터는 코드를 보며 앞서 설명한 컨셉들이 어떤식으로 적용이 되어있는지 살펴봅시다.
 
 ```javascript
-
+const arr = []; // 배열
+const obj = {}; // 오브젝트
+debugger;
 ```
+
+<blockquote class="dev-tool">
+  <div class="head">
+    <p class="title arrow-down">Scope</p>
+  </div>
+  <div class="body">
+    <p class="title arrow-down">Script</p>
+     <p class="sub-title arrow-down">
+      <span class="key">arr</span>
+      <span class="value">Array(0)</span>
+    </p>
+    <p class="property">
+      <span class="key">0</span>
+      <span class="value purple">1</span>
+    </p>
+    <p class="property">
+      <span class="key">1</span>
+      <span class="value purple">2</span>
+    </p>
+    <p class="property">
+      <span class="key">2</span>
+      <span class="value purple">3</span>
+    </p>
+    <p class="property">
+      <span class="key dark-sky">length</span>
+      <span class="value purple">3</span>
+    </p>
+    <div class="margin-l-10 margin-b-10">
+      <p class="sub-title arrow-down">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">Array(0)</span>
+      </p>
+      <div class="margin-l-10 margin-b-10">
+        <p class="property">
+          <span class="key dark-sky">map</span>
+          <span class="value gray"><span class="orange">f</span> map()</span>
+        </p>
+        <p class="property">
+          <span class="key dark-sky">pop</span>
+          <span class="value gray"><span class="orange">f</span> pop()</span>
+        </p>
+        <p class="property">
+          <span class="key dark-sky">push</span>
+          <span class="value gray"><span class="orange">f</span> push()</span>
+        </p>
+        <p class="property">
+          <span class="key dark-sky">reduce</span>
+          <span class="value gray"><span class="orange">f</span> reduce()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key gray">[[Prototype]]</span>
+          <span class="value">Object</span>
+        </p>
+      </div>
+    </div>
+    <p class="sub-title arrow-down">
+      <span class="key">obj</span>
+      <span class="value"></span>
+    </p>
+    <p class="property">
+      <span class="key">name</span>
+      <span class="value">"Jack"</span>
+    </p>
+    <div class="margin-l-10">
+      <p class="sub-title arrow-down">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">Object</span>
+      </p>
+      <div class="margin-l-10 margin-b-10">
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">constructor</span>
+          <span class="value"><span class="orange">f</span> Object()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">hasOwnProperty</span>
+          <span class="value"><span class="orange">f</span> hasOwnProperty()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">isPrototypeOf</span>
+          <span class="value"><span class="orange">f</span> isPrototypeOf()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">propertyIsEnumerable</span>
+          <span class="value"><span class="orange">f</span> propertyIsEnumerable()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">toLocaleString</span>
+          <span class="value"><span class="orange">f</span> toLocaleString()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">toString</span>
+          <span class="value"><span class="orange">f</span> toString()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">valueOf</span>
+          <span class="value"><span class="orange">f</span> valueOf()</span>
+        </p>
+        <p class="sub-title arrow-right">
+          <span class="key dark-sky">__proto__</span>
+          <span class="value">(...)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</blockquote>
+
+우리는 배열과 오브젝트의 구조를 살펴보았습니다. 위의 구조를 살펴보면 배열은 자기자신의 고유속성으로 인덱스와 인덱스에 해당하는 값을 가지고있고 length를 가지고 있습니다.
+그리고 prototype이 Array인 객체를 참조하고 있고 우리가 만들어낸 arr 이라는 객체는 Array의 속성을 사용할수 있습니다. 그리고 Array 객체에 걸려있는 prototype을 보면
+Array의 prototype은 Object로 설정되어 있습니다. 밑에 있는 obj의 구조를 살펴보면 obj의 고유 속성은 { name: 'Jack' } 이며 obj객체의 prototype은 Object입니다.
+
+이를 통해 우리가 알수 있는 사실이 있다. 바로 자바스크립트에서 원형(가장 좋은 본보기)은 Object이며 모든 객체가 결국 Object를 prototype(원형)으로 참조하고있습니다.
+이러한 현상은 앞서 설명한 로쉬의 `등급이 매겨진 (개념) 구조(graded structure)`를 따릅니다. 따라서 위의 코드에선 obj가 더 높은 가족 유사성이 높고 arr는 obj보단 원형으로 부터
+거리가 있는 개체입니다.
+
+이러한 구조를 바탕으로 직접 위에서 언급한 참새에 대한 구조를 코드로 구현해봅시다.
+
+```javascript
+// 원형(prototype) 객체
+const 새 = new Object({
+  등급: 1,
+  깃털: true,
+  부리: true,
+  날개: true,
+  날수있나: true,
+});
+
+// 날지 못하는 새들의 prototype
+const 못나는새 = Object.create(새);
+못나는새.날수있나 = false;
+못나는새.등급 = 2;
+
+const 참새 = Object.create(새); // 참새는 날수 있는 새이므로 원형의 속성을 위임받는다.
+const 타조 = Object.create(못나는새); // 타조는 날수없는 새이므로 못나는새의 속성을 위임받는다.
+```
+
+<blockquote class="dev-tool">
+  <div class="head">
+    <p class="title arrow-down">Scope</p>
+  </div>
+  <div class="body">
+    <p class="title arrow-down">Script</p>
+     <p class="sub-title arrow-down">
+      <span class="key">새</span>
+      <span class="value"></span>
+    </p>
+    <div class="margin-l-10 margin-b-10">
+      <p class="property">
+        <span class="key">등급</span>
+        <span class="value purple">1</span>
+      </p>
+      <p class="property">
+        <span class="key">깃털</span>
+        <span class="value purple">true</span>
+      </p>
+      <p class="property">
+        <span class="key">날개</span>
+        <span class="value purple">true</span>
+      </p>
+      <p class="property">
+        <span class="key">날수있나</span>
+        <span class="value purple">true</span>
+      </p>
+      <p class="property">
+        <span class="key">부리</span>
+        <span class="value purple">true</span>
+      </p>
+      <p class="sub-title arrow-right">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">Object</span>
+      </p>
+    </div>
+    <p class="sub-title arrow-down">
+      <span class="key">못나는새</span>
+      <span class="value"></span>
+    </p>
+    <div class="margin-l-10 margin-b-10">
+      <p class="property">
+        <span class="key">등급</span>
+        <span class="value purple">2</span>
+      </p>
+      <p class="property">
+        <span class="key">날수있나</span>
+        <span class="value purple">false</span>
+      </p>
+      <p class="sub-title arrow-right">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">새</span>
+      </p>
+    </div>
+    <p class="sub-title arrow-down">
+      <span class="key">참새</span>
+      <span class="value"></span>
+    </p>
+    <div class="margin-l-10 margin-b-10">
+      <p class="sub-title arrow-right">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">새</span>
+      </p>
+    </div>
+    <p class="sub-title arrow-down">
+      <span class="key">타조</span>
+      <span class="value"></span>
+    </p>
+    <div class="margin-l-10 margin-b-10">
+      <p class="sub-title arrow-right">
+        <span class="key gray">[[Prototype]]</span>
+        <span class="value">못나는새</span>
+      </p>
+    </div>
+  </div>
+</blockquote>
+
+객체들의 구조를 살펴보면 참새는 새로부터 속성을 위임받습니다. 원형에 가깝고 새의 표본이 될수 있는객체이므로 등급도 높습니다.  
+타조는 못나는새로부터 속성을 위임받고 못나는새는 새로부터 속성을 위임받습니다. 원형과 거리가 멀고 등급도 낮으므로 다른 새들의 표본이 되지는 못합니다.
+
+사실 위의 구조는 class를 통해서도 똑같이 구현이 가능합니다. 하지만 우리는 관점에 대해서 생각해봐야합니다.
+못나는 새라는 범주가 정의되고 이러한 범주에 의해 타조의 속성이 생기는것이 아니라 타조의 속성이 있고 이를 기반으로 못나는 새라는 범주에 들어가는것 입니다.
+이 부분이 prototype-base programming의 가장 핵심부분인것같습니다.
+
+이후 설명할 this 및 context, lexical에서 이러한 관점은 아주 중요한 지표가 됩니다.
+
+#### this, 실행 컨텍스트(excution context), lexical scope, hoisting
+
+자 이제 앞서배운 prototype 원리에 기반하여 자바스크립트의 중요한 부분인 `this, lexical scope, hoisting` 에대해서 설명해보겠습니다.
 
 #### 참조
 
