@@ -151,3 +151,25 @@ blockquote.dev-tool {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
+
+p {
+  &.speak {
+    font-style: italic;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 0 10px;
+    font-size: 18px;
+    border-left: 2px solid var(--link-color);
+    color: var(--bold-color);
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+
+  img {
+    width: 100%;
+  }
+}
