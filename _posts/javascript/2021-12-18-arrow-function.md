@@ -77,61 +77,64 @@ const arrow = () => {};
 debugger;
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Script</p>
-    <p class="sub-title arrow-down">
-      <span class="key">normal</span>
-      <span class="value"><span class="orange">f</span> ()</span>
-    </p>
-    <div class="margin-l-10 margin-b-10">
-      <p class="property">
-        <span class="key dark-sky">arguments</span>
-        <span class="value gray">null</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">caller</span>
-        <span class="value gray">null</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">length</span>
-        <span class="value purple">0</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">name</span>
-        <span class="value">normal</span>
-      </p>
-      <p class="sub-title arrow-right">
-        <span class="key dark-sky">prototype</span>
-        <span class="value">{ <span class="gray">constructor</span>: f }</span>
-      </p>
-    </div>
-    <p class="sub-title arrow-down">
-      <span class="key">arrow</span>
-      <span class="value">() => {}</span>
-    </p>
-    <div class="margin-l-10">
-      <p class="property">
-        <span class="key dark-sky">length</span>
-        <span class="value purple">0</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">name</span>
-        <span class="value">arrow</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">arguments</span>
-        <span class="value white">(...)</span>
-      </p>
-      <p class="property">
-        <span class="key dark-sky">caller</span>
-        <span class="value white">(...)</span>
-      </p>
-    </div>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Script</dt>
+    <dd>
+      <dl>
+        <dt>
+          <b class="sky">normal</b>
+          <span><span class="orange">f</span> ()</span>
+        </dt>
+        <dd>
+          <b class="dark-sky">arguments</b>
+          <span class="gray">null</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">caller</b>
+          <span class="gray">null</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">length</b>
+          <span class="purple">0</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">name</b>
+          <span>normal</span>
+        </dd>
+        <dd>
+          <dl>
+            <dt>
+              <b class="dark-sky">prototype</b>
+              <span>{ <span class="gray">constructor</span>: f }</span>
+            </dt>
+          </dl>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <b class="sky">arrow</b>
+          <span>() => {}</span>
+        </dt>
+        <dd>
+          <b class="dark-sky">length</b>
+          <span class="purple">0</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">name</b>
+          <span>arrow</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">arguments</b>
+          <span class="white">(...)</span>
+        </dd>
+        <dd>
+          <b class="dark-sky">caller</b>
+          <span class="white">(...)</span>
+        </dd>
+      </dl>
+    </dd>
+  </dl>
 </blockquote>
 
 위의 구조를 살펴보면 화살표 함수에는 `prototype`과 `constructor`가 없다는것을 확인할수 있습니다.  
@@ -206,7 +209,7 @@ obj.normal();
 
 이번 코드에서는 normal 함수를 obj라는 객체에 담아서 normal 함수를 실행시켰습니다. `obj` 오브젝트가 normal을 실행시킨 `주체`이기때문에 this는 obj를 가르킵니다.
 
-반면 기본적으로 화살표 함수는 this를 가지고있지 않다. 그렇다면 화살표 함수가 가르키는 this는 누구일까요?
+반면 기본적으로 화살표 함수는 this를 가지고있지 않습니다. 그렇다면 화살표 함수가 가르키는 this는 누구일까요?
 
 화살표함수가 this를 참조하는 방식에 대해 알아보겠습니다. 우선 화살표 함수는 `lexical(정적) 스코프의` this를 참조합니다. `lexical`스코프란 엔진이 해석할때, 화살표 함수를 만나면 function오브젝트를 생성하고 화살표 함수가 속한 스코프를 생성된 오브젝트에 바인딩을 합니다. 그리고 오브젝트에 바인딩된 스코프의 this를 화살표함수가 this로 사용하게 됩니다.
 
@@ -267,6 +270,3 @@ new Obj().getName();
 - 화살표함수의 this는 어디에 선언이 되는지에따라 가르키는 this가 달라진다.
 - 화살표 함수는 function 오브젝트가 생성될때 오브젝트가 스코프를 생성된 오브젝트에 바인딩을 한다.
 - 한번 바인딩 된 화살표 함수의 this 는 다시 bind함수를 사용하여 래핑을 한다고 해서 this가 변경되지 않는다.
-
-위의 코드는 class문법으로 사용하지 않았지만 class내부에서도 같은 동작 원리를 가지고 있습니다.
-많이 헷갈릴수도 있는부분이기때문에 이러한 특성을 인지하고 스스로 여러 환경에서 연습을 하며 익혀야합니다.

@@ -32,17 +32,14 @@ var varGlobal = "varGlobal";
 // 또는 varGlobal = 'varGlobal';
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Global</p>
-    <p class="property">
-      <span class="key">varGlobal</span>
-      <span class="value">'varGlobal'</span>
-    </p>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Global</dt>
+    <dd>
+      <b>varGlobal</b>
+      <span>'varGlobal'</span>
+    </dd>
+  </dl>
 </blockquote>
 
 전역 변수를 설정하게되면 위와같이 Global scope에 변수가 저장되게되고 window 객체를 참조하여 해당 변수의 값을 불러올수 있습니다.
@@ -54,18 +51,17 @@ let 변수는 블록범위 내에서 작성해야하지만 전역위치에서는
 let letGlobal = "letGlobal";
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Script</p>
-    <p class="property">
-      <span class="key">letGlobal</span>
-      <span class="value">'letGlobal'</span>
-    </p>
-    <p class="title arrow-right">Global</p>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Script</dt>
+    <dd>
+      <b>letGlobal</b>
+      <span>'letGlobal'</span>
+    </dd>
+  </dl>
+  <dl>
+    <dt>Global</dt>
+  </dl>
 </blockquote>
 
 위 이미지의 Script는 하나의 블록 개념으로 script가 작성된 모든파일에서 공유하고 이를 글로벌 변수처럼 사용할수 있습니다.
@@ -88,26 +84,30 @@ console.log(name);
 // 결과: Jack
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Local</p>
-    <p class="sub-title arrow-right">
-      <span class="key gray">this</span>
-      <span class="value">Window</span>
-    </p>
-    <p class="property">
-      <span class="key">name</span>
-      <span class="value">'Koh'</span>
-    </p>
-    <p class="title arrow-down">Global</p>
-    <p class="property">
-    <span class="key">name</span>
-    <span class="value">'Jack'</span>
-  </p>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Local</dt>
+    <dd>
+      <dl>
+        <dt>
+          <b>this</b>
+          <span>Window</span>
+        </dt>
+      </dl>
+    </dd>
+    <dd>
+      <b>name</b>
+      <span>'Koh'</span>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt class="down">Global</dt>
+    <dd>
+      <b>name</b>
+      <span>'Jack'</span>
+    </dd>
+  </dl>
 </blockquote>
     
 개발자 도구를 살펴보면 선언된 두 변수는 서로 다른 범위에서 적용된 변수이고 출력하는부분이 Global Scope 에서 실행되기 때문에
@@ -133,17 +133,14 @@ console.log("out :", name);
 // 결과: in : Koh, out : Koh
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Global</p>
-    <p class="property">
-      <span class="key">name</span>
-      <span class="value">'Koh'</span>
-    </p>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Global</dt>
+    <dd>
+      <b>name</b>
+      <span>'Koh'</span>
+    </dd>
+  </dl>
 </blockquote>
 
 `var` 변수는 블록범위를 가지지 않으므로 위의 코드에서 `var name` 은 서로 다른 블록에 설정된 변수가 아닌 같은 변수로서 인식됩니다.
@@ -160,23 +157,20 @@ console.log("out :", name);
 // 결과: in : Koh, out : Jack
 ```
 
-<blockquote class="dev-tool">
-  <div class="head">
-    <p class="title arrow-down">Scope</p>
-  </div>
-  <div class="body">
-    <p class="title arrow-down">Block</p>
-    <p class="property">
-      <span class="key">name</span>
-      <span class="value">'Koh'</span>
-    </p>
-    <p class="title arrow-down">Script</p>
-    <p class="property">
-      <span class="key">name</span>
-      <span class="value">'Jack'</span>
-    </p>
-    <p class="title arrow-right">Global</p>
-  </div>
+<blockquote class="dev-tool-scope">
+  <dl>
+    <dt class="down">Block</dt>
+    <dd>
+      <b>name</b>
+      <span>'Koh'</span>
+    </dd>
+    <dt class="down">Script</dt>
+    <dd>
+      <b>name</b>
+      <span>'Jack'</span>
+    </dd>
+    <dt>Global</dt>
+  </dl>
 </blockquote>
 
 이러한 결과가 출력되는 이유는 `let` 변수는 엔진이 스크립트를 읽으면서 블록을 만나게 되면 해당하는 `블록 스코프`를 만들고
