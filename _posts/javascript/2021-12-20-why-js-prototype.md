@@ -41,7 +41,7 @@ permalink: /blog/2021-12-17-prototype/
 ```
 
 <p class="image__center">
-  <img src="/assets/img/posts/javascript/prototype/플라톤.jpg" alt="플라톤" />
+  <img class="w-80" src="/assets/img/posts/javascript/prototype/플라톤.jpg" alt="플라톤" />
 </p>
 
 <p class="speak">"모든 서양철학의 전통은 플라톤에 대한 각주에 불과하다" - 화이트 헤드</p>
@@ -100,7 +100,7 @@ const 참새 = new 조류();
 에 의해 계속 되었습니다.
 
 <p class="image__center">
-  <img src="/assets/img/posts/javascript/prototype/비트겐슈타인.jpg" alt="비트겐슈타인" />
+  <img class="w-80" src="/assets/img/posts/javascript/prototype/비트겐슈타인.jpg" alt="비트겐슈타인" />
 </p>
 
 <p class="speak">공유 속성의 관점에서 정의하기 어려운 개념이 있다(사실상 올바른 분류란 없다) — 비트겐슈타인</p>
@@ -145,7 +145,7 @@ const 참새 = new 조류();
 이렇게 분류했을 때 가장 높은 등급을 가진 녀석이 나올 텐데요, 이것이 바로 원형(Prototype)이다. 란 주장이 프로토타입 이론입니다.
 
 <p class="image__center">
-  <img src="/assets/img/posts/javascript/prototype/새.jpg" alt="새" />
+  <img class="w-80" src="/assets/img/posts/javascript/prototype/새.jpg" alt="새" />
 </p>
 
 ‘새'를 예로 들어볼까요?

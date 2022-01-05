@@ -160,9 +160,17 @@ p {
 p.image__center {
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  justify-content: center;
+  width: 100%;
 
   img {
     width: 100%;
+    &.w-80 {
+      width: 80%;
+    }
+
+    &.w-90 {
+      width: 90%;
+    }
   }
 }
