@@ -717,9 +717,18 @@ header {
   padding-top: 2px;
   margin: 5px;
 }
+#article-img {
+  display: flex;
+  align-items: center;
+}
+#article-link {
+  display: flex;
+  align-items: center;
+}
 .recent-article-link {
   font-size: 20px;
   text-decoration: none;
+  margin-bottom: 0;
 }
 .article-card-link,
 .article-card-link:hover {
